@@ -9,7 +9,7 @@ module Exercise
         first, *rest = self
 
         block.call(first)
-        MyArray.new(rest).my_each(&block) unless rest.empty?
+        MyArray.new(rest).my_each(&block) if rest.any?
 
         self
       end
